@@ -107,3 +107,4 @@ venv.bak/
 # ignore the data paths
 data/
 data_gdf/
+images*/
