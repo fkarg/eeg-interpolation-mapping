@@ -1,15 +1,10 @@
-
+#!/usr/bin/python3
 # coding: utf-8
-
-# In[4]:
-
 
 import sys
 import os
 sys.path.insert(0,'/home/ced/Coding/EEGLearn/')
 
-
-# In[5]:
 
 
 from braindecode.datautil.splitters import split_into_train_valid_test, split_into_train_test
@@ -20,8 +15,6 @@ from braindecode.datautil.signalproc import (bandpass_cnt,
 from braindecode.datautil.trial_segment import create_signal_target_from_raw_mne
 from collections import OrderedDict
 
-
-# In[6]:
 
 
 
@@ -65,20 +58,15 @@ def load_data(data_folder, subject_id, low_cut_hz, high_cut_hz, train_or_test):
     return dataset
 
 
-# In[7]:
-
-
 n_folds = 5
 i_test_fold = 4
-data_folder = '/home/ced/Coding/EEGLearn/data_gdf/'
+data_folder = '~/Coding/EEGLearn/data_gdf/'
 subject_id = 1 # from 1-9
 low_cut_hz = 7 # or 4, as before
 high_cut_hz = 14
 train_set = load_data(data_folder, subject_id, low_cut_hz, high_cut_hz, "train")
 
-#  Don't know if you had only train and test or also validation set?
-# train_set, valid_set, test_set = split_into_train_valid_test(
-#     train_set, n_folds=n_folds, i_test_fold=i_test_fold,)
+# train_set, valid_set, test_set = split_into_train_valid_test(train_set, n_folds=n_folds, i_test_fold=i_test_fold,)
 
 # train_set, test_set = split_into_train_test(train_set, n_folds=n_folds, i_test_fold=i_test_fold,)
 
